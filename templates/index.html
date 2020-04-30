@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Загрузка файлов</title>
+        <meta charset="utf-8">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static "css/styles.css" %}">
+    </head>
+    
+    <body>
+        <div class="header">
+        <h2>Скачать файлы</h2>
+        <button><a href="/admin">Войти как администратор</a></button>
+        </div>
+        <p>Список файлов</p>
+        <ul>
+        {% block content %}
+
+            {% if files_list %}
+                {% for a in files_list %}
+                    <li><a href="{% url 'download' a.file_content %}">{{a.file_name}}</a></li>
+                {% endfor%}
+            {% else %}
+                ПУСТО :(
+            {% endif %}
+
+        {% endblock %}  
+        </ul>
+    </body>
+</html>

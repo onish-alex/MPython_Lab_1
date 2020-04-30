@@ -1,0 +1,20 @@
+body {
+    background-color: darkkhaki;
+}
+
+h2 {
+    color: blue;
+    font-size: 2em;
+}
+
+button > a {
+    color : black;
+    text-decoration: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
